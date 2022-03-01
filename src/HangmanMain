@@ -11,7 +11,7 @@ public class HangmanMain  {
     public static final boolean SHOW_COUNT = true;  // show # of choices left
 
     public static void main(String[] args) throws FileNotFoundException {
-        System.out.println("Welcome to hangman game.");
+        System.out.println("Welcome to Hangman!");
         System.out.println();
 
         // open the dictionary file and read dictionary into an ArrayList
@@ -42,25 +42,25 @@ public class HangmanMain  {
     // Plays one game with the user
     public static void playGame(Scanner console, HangmanManager hangman) {
         while (hangman.guessesLeft() > 0 && hangman.pattern().contains("-")) {
-            System.out.println("guesses : " + hangman.guessesLeft());
+            System.out.println("Guesses : " + hangman.guessesLeft());
             if (SHOW_COUNT) {
-                System.out.println("words   : " + hangman.words().size());
+                System.out.println("Words   : " + hangman.words().size());
             }
-            System.out.println("guessed : " + hangman.guesses());
-            System.out.println("current : " + hangman.pattern());
+            System.out.println("Guessed : " + hangman.guesses());
+            System.out.println("Current : " + hangman.pattern());
             System.out.print("Your guess? ");
             char ch = console.next().toLowerCase().charAt(0);
             if (hangman.guesses().contains(ch)) {
-                System.out.println("You already guessed that");
+                System.out.println("You already guessed that.");
             } else {
                 int count = hangman.record(ch);
                 if (count == 0) {
-                    System.out.println("Sorry, there are no " + ch + "'s");
+                    System.out.println("Sorry, there are no " + ch + "'s.");
                 } else if (count == 1) {
-                    System.out.println("Yes, there is one " + ch);
+                    System.out.println("Yes, there is one " + ch + ".");
                 } else {
                     System.out.println("Yes, there are " + count + " " + ch +
-                            "'s");
+                            "'s.");
                 }
             }
             System.out.println();
@@ -74,9 +74,9 @@ public class HangmanMain  {
         String answer = hangman.words().iterator().next();
         System.out.println("answer = " + answer);
         if (hangman.guessesLeft() > 0) {
-            System.out.println("You beat me");
+            System.out.println("Congratulations!");
         } else {
-            System.out.println("Sorry, you lose");
+            System.out.println("Better luck next time!");
         }
     }
 }
