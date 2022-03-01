@@ -6,11 +6,6 @@ import java.nio.file.Paths;
 import java.util.*;     // Collections
 import java.io.*;       // File access
 
-/**
- * Contains testing code for the public functions of the class HangmanManager
- * @Author Christopher Nugent, Mikyung Han for EGR221 Solutions
- * @Version Jan 2017 (Updated on 1/29/2017)
- */
 public class HangmanManagerTest {
 
     private static final String EXPECTED_TEMPLATE =
@@ -99,9 +94,7 @@ public class HangmanManagerTest {
         testAgainstFiles(9, 1, "dic", "false");
     }
 
-    private static void compareFiles(
-            String expectedOutputFilePath,
-            String actualOutputFilePath) {
+    private static void compareFiles(String expectedOutputFilePath, String actualOutputFilePath) {
         String expected = dumpFileContentsToString(expectedOutputFilePath, true);
         try {
             HangmanFileMain.main(null);
@@ -290,7 +283,7 @@ public class HangmanManagerTest {
         try{
             h.pattern();
             Assert.fail("Must throw IllegalStateException");
-        }catch(IllegalStateException e){
+        } catch(IllegalStateException e){
         }
     }
 }
