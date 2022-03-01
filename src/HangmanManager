@@ -1,24 +1,11 @@
 import java.util.*;
 
-/**
- *  Primary class for "Evil Hangman"
- *
- * Contains the primary logic for a game of hangman that cheats by always leaving the player with the widest possible
- * set of answers when the guess a letter.
-
- * @Author Christopher Nugent, Mikyung Han for EGR221 Solutions
- * @Version Jan 2017
- */
 public class HangmanManager {
 
-    /* Contains all currently considered words */
-    private Set<String> answerSpace;
-    /* All guesses made by the player */
-    private SortedSet<Character> guessedCharacters;
-    /* The number of guesses remaining */
-    private int guessesRemaining;
-    /* The pattern that is to be displayed */
-    private String pattern;
+    private Set<String> answerSpace; // Contains all currently considered words
+    private SortedSet<Character> guessedCharacters; // All guesses made by the player
+    private int guessesRemaining; // The number of guesses remaining
+    private String pattern; // The pattern that is to be displayed
 
     /*
      * Constructor
